@@ -19,28 +19,28 @@ fetch("assets/database.json")
         document.forms["langForm"].addEventListener("change", (event) => {
             switch (event.target.value) {
                 case "uz":
-                    document.querySelector("#langBtn").innerHTML = `<img src="./assets/images/uzbekistan.png">O'zbek <i class="fa fa-chevron-right"></i>`
+                    document.querySelector("#langBtn").innerHTML = `<img src="./assets/images/uzbekistan.png"><span>O'zbek</span> <i class="fa fa-chevron-right"></i>`
                     break;
                 case "ru":
-                    document.querySelector("#langBtn").innerHTML = `<img src="./assets/images/russia.png"> Русский<i class="fa fa-chevron-right"></i>`
+                    document.querySelector("#langBtn").innerHTML = `<img src="./assets/images/russia.png"> <span>Русский</span><i class="fa fa-chevron-right"></i>`
                     break;
                 case "en":
-                    document.querySelector("#langBtn").innerHTML = `<img src="./assets/images/united-states-of-america.png"> English <i class="fa fa-chevron-right"></i>`
+                    document.querySelector("#langBtn").innerHTML = `<img src="./assets/images/united-states-of-america.png"> <span>English </span><i class="fa fa-chevron-right"></i>`
                     break;
                 default:
                     break;
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
             document.querySelector("html").lang = event.target.value
             const nowLang = event.target.value,
                 oldLang = sessionStorage.getItem("lang");
@@ -55,9 +55,9 @@ fetch("assets/database.json")
                         }
 
                     }
-                } else if (tag.tagName == "INPUT"|| tag.tagName=="TEXTAREA") {
-                    
-                        console.log(tag.tagName);
+                } else if (tag.tagName == "INPUT" || tag.tagName == "TEXTAREA") {
+
+                    console.log(tag.tagName);
                     for (let index = 0; index < json.length; index++) {
                         if (tag.placeholder === json[index][oldLang]) {
                             tag.placeholder = json[index][nowLang]
@@ -74,9 +74,9 @@ fetch("assets/database.json")
     })
 
 
-    document.getElementById("langBtn").addEventListener("click",()=>{
-        document.querySelector(".langForm").classList.toggle("showForm")
-    })
+document.getElementById("langBtn").addEventListener("click", () => {
+    document.querySelector(".langForm").classList.toggle("showForm")
+})
 
 
 
